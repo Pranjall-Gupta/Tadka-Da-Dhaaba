@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tadka Da Dhaaba</title>
+    <link rel="icon" href="images/restroicon.png">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            background-color: rgb(78, 11, 84);
+            height: 128px;
+            padding:3px
+            
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Brush Script MT', cursive;
+            margin:3px;
+            color: white;
+            padding: auto;
+            font-size: 60px;
+            font-weight:bold;
+            
+        }
+        
+        .nav-links{
+            list-style: none;
+            display: flex;            
+            justify-content:space-around;
+            align-items: center;
+        }
+        a{
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color: wheat;
+            text-decoration: underline;
+        }
+        a:visited{
+            color: whitesmoke;
+        }
+        .footerBox{
+            background-color:rgb(78, 11, 84) ;
+            width:100%;
+            text-align:center;
+            min-height: 40px;
+           
+        }
+        .footerBox p{
+            color: rgb(248, 248, 248);
+            font-size: 20px;
+            padding: 5px;
+        }
+        .contentBox{
+            width:65%;
+            margin: auto;
+            box-shadow: 0px 0px 10px 2px rgb(89, 28, 97);
+            background-color: white;
+            border-radius: 15px;
+            display:flex;
+            flex-direction: column;
+            padding:10px;
+            gap:100px
+        }
+        .item{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px; /*space between recipes*/
+        }
+        .leftBox{
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            padding-right: 40px;
+            width: 700px;
+            gap:20px;
+        }
+        .rightBox{
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            
+        }
+        .rightBox .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(40, 35, 35, 0.621);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius:20px ;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+
+        }
+        .rightBox .overlay span{
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .rightBox:hover .overlay{
+            opacity: 0;
+        }
+        .rightBox img{
+            height: 500px;
+            width:400px;
+            display: block;
+            border-radius: 20px;
+        }
+        .leftBox h1{
+            font-family: 'Brush Script MT', cursive;
+            font-size: 60px;
+            font-style: italic;
+            font-weight: 20;
+            text-decoration: underline;
+            
+        }
+        .leftBox h2{
+            text-decoration: underline;
+            font-size:2rem;
+        }
+        .ingrelist{
+            font-size: 1.3rem;
+        }
+        .recipelist{
+            font-size: 1.3rem;
+        }
+        #home{
+            position: relative;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #home img{
+            width:66%;
+            height:800px;
+            box-shadow: 0px 0px 10px 2px rgb(89, 28, 97);
+            border-radius: 15px;
+        }
+        #headingdhaaba{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            display: flex;
+            text-shadow: 2px 2px 8px black;
+            z-index: 10;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        #about {
+            display: flex;
+            justify-content: center;   /* centers the whole section horizontally */
+            align-items: center;       /* centers content vertically if needed */
+            margin: 50px 0;            /* spacing around About Us */
+        }
+
+        #about section {
+            box-shadow: 0px 0px 10px 2px rgb(89, 28, 97);
+            width: 62%;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;        /* centers heading + paragraph text */
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 20px auto 0 auto;  /* centers paragraph */
+            line-height: 1.8;
+            color: #333;
+        }
+
+        #about h1 {
+            font-family: 'Brush Script MT', cursive; 
+            font-size: 3rem; 
+            color: rgb(78, 11, 84);
+            margin-bottom: 20px;
+        }
+        #contactsection{
+            width: 61%;
+            padding:50px; 
+            text-align:center;
+            box-shadow: 0px 0px 10px 2px rgb(89, 28, 97);
+            border-radius: 15px;
+        }
+        #contact h1{
+            font-family: 'Brush Script MT', cursive; 
+            font-size: 3rem; 
+            color:rgb(78, 11, 84);
+        }
+        #contact p{
+            font-size:1.2rem; 
+            max-width:700px; 
+            margin:auto; 
+            line-height:1.8; 
+            color:#333;
+        }
+        #details{
+            margin-top:30px; 
+            font-size:1.1rem; 
+            line-height:1.8; 
+            color:#444;
+        }
+        #contact{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #contact form{
+            margin-top:40px; 
+            max-width:500px; 
+            margin-left:auto; 
+            margin-right:auto; 
+            text-align:left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="navContainer">
+            <nav class="navbar">
+                <div class="logo">Tadka Da Dhaaba</div><br>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+        <main>
+            <br>
+            <div id="home">
+                <h1 id="headingdhaaba">Welcome to the Dhaaba</h1>
+                <img src="images/homepage.jpg">
+            </div>
+            <br>
+            <div class="contentBox">
+                <!-- Recipe 1 -->
+                <section id="menu">
+                    <div  class="item">
+                        <div class="leftBox">
+                            <!--heading-->
+                            <h1>Gulab Jamun</h1>
+                            <br>
+                            <div class="ingredients">
+                                <h2>Ingredients</h2><br>
+                                <h3>For the Jamun (dumplings):</h3>
+                                <ul class="ingrelist">
+                                    <li>1 cup khoya (mawa)</li>
+                                    <li>1/4 cup all-purpose flour (maida)</li>
+                                    <li>2 tbsp milk (adjust as needed)</li>
+                                    <li>1/4 tsp baking soda (optional)</li>
+                                    <li>Ghee or oil for deep frying</li>
+                                </ul><br>
+                                <h3>For the Sugar Syrup:</h3>
+                                <ul class="ingrelist">
+                                    <li>2 cups sugar</li>
+                                    <li>1 1/2 cups water</li>
+                                    <li>4-5 cardamom pods (crushed)</li>
+                                    <li>1 tsp rose water or a few strands of saffron (optional)</li>
+                                    
+                                </ul>
+                            </div>
+                            <br>
+                            <div class="recipe">
+                                <h2>Recipe</h2><br>
+                                <ol  class="recipelist">
+                                    <li><b>Prepare sugar syrup:</b> Boil sugar and water until sugar dissolves. Add crushed cardamom and rose water. Keep warm.</li><br>
+                                    <li><b>Prepare dough:</b> Crumble khoya into a bowl. Mix maida and baking soda. Add a little milk to form a smooth, soft dough.</li><br>
+                                    <li><b>Fry Jamuns:</b> Heat ghee on medium-low flame. Fry balls until golden brown. Remove and drain on paper towel.</li><br>
+                                    <li><b>Soak in syrup:</b> Immediately immerse fried balls in warm sugar syrup for 2-3 hours before serving.</li><br>
+                                </ol>
+                            </div>
+                            
+                        </div>
+                        <div class="rightBox">
+                         <img src="images/gulabjamun.jpg" alt="Gulab Jamun" >
+                         <div class="overlay">
+                            <span>Click here to start</span>
+                         </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <!-- Recipe 2 -->
+                <section>
+                    <div  class="item">
+                        <div class="leftBox">
+                            <!--heading-->
+                            <h1>Ras Malai</h1><br>
+                            <div class="ingredients">
+                                <h2>Ingredients</h2><br>
+                                <h3>For the Ras Malai balls:</h3>
+                                <ul class="ingrelist">
+                                    <li>1 liter milk</li>
+                                    <li>2 tbsp lemon juice or vinegar</li>
+                                    <li>1/4 cup sugar</li>
+                                    <li>1 tbsp all-purpose flour (maida) or cornflour</li>
+                                    <li>4-5 cardamom pods (crushed)</li>
+                                </ul><br>
+                                <h3>For the Rabri (milk syrup):</h3>
+                                <ul class="ingrelist">
+                                    <li>1 liter milk</li>
+                                    <li>1/2 cup sugar (adjust to taste)</li>
+                                    <li>1/4 tsp cardamom powder</li>
+                                    <li>A few strands of saffron</li>
+                                    <li>2 tsp chopped pistachios or almonds (for garnish)</li>
+                                    
+                                </ul>
+                            </div>
+                            <br>
+                            <div class="recipe">
+                                <h2>Recipe</h2><br>
+                                <ol class="recipelist">
+                                    <li><b>Prepare Chhena(paneer):</b> Boil milk and add lemon juice to curdle. Drain curds in muslin cloth, rinse to remove sourness, squeeze out excess water.</li><br>
+                                    <li><b>Make balls:</b> Knead chhena until smooth. Mix sugar and flour. Shape into small flat discs.</li><br>
+                                    <li><b>Boil Ras (syrup):</b> Boil water with sugar and cardamom. Add chhena discs, cook on medium flame for 15-20 minutes. Cool.</li><br>
+                                    <li><b>Prepare Rabri:</b> Boil milk slowly, reduce to half. Add sugar, cardamom, saffron. Let cool.</li><br>
+                                    <li><b>Serve:</b> Soak Ras Malai discs in rabri, garnish with chopped nuts.</li><br>
+                                </ol>
+                            </div>
+                            
+                        </div>
+                        <div class="rightBox">
+                         <img src="images/rasmalai.jpg" alt="Ras Malai" width="300px" height="200px">
+                         <div class="overlay">
+                            <span>Click here to start</span>
+                         </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <!-- Recipe 3 -->
+                <section>
+                    <div  class="item">
+                        <div class="leftBox">
+                            <!--heading-->
+                            <h1>Jalebi</h1><br>
+                            <div class="ingredients">
+                                <h2>Ingredients</h2><br>
+                                <h3>Batter:</h3>
+                                <ul  class="ingrelist">
+                                    <li>1 cup all-purpose flour</li>
+                                    <li>2 tbsp cornflour (optional)</li>
+                                    <li>1/2 cup yogurt</li>
+                                    <li>1/2 cup water</li>
+                                    <li>1/4 tsp baking powder</li>
+                                    <li>A pinch of turmeric or saffron (optional)</li>
+                                </ul><br>
+                                <h3>Sugar Syrup:</h3>
+                                <li>1 cup sugar</li>
+                                <li>1/2 cup water</li>
+                                <li>1/2 tsp lemon juice</li>
+                                <li>1/4 tsp cardamom powder</li>
+                                <br>
+                                <h3>For Frying:</h3>
+                                <li>Oil or ghee</li>
+                            </div>
+                            <br>
+                            <div class="recipe">
+                                <h2>Recipe</h2>
+                                <ol class="recipelist"><br>
+                                    <li><b>Prepare sugar syrup:</b> Boil sugar and water. Add cardamom and lemon juice. Keep warm.</li><br>
+                                    <li><b>Prepare batter:</b> Mix flour, cornflour, yogurt, water, and baking powder to a smooth batter. Let ferment 6-8 hours for best results.</li><br>
+                                    <li><b>Fry Jalebis:</b> Heat oil on medium flame. Pour batter in a spiral shape using a piping bag or bottle. Fry until golden and crisp.</li><br>
+                                    <li><b>SOak in syrup:</b> Immerse fried jalebis in warm sugar syrup for 1-2 minutes. Remove and serve hot.</li><br>
+                                </ol>
+                            </div>
+                            
+                        </div>
+                        <div class="rightBox">
+                         <img src="images/jalebi.jpg" alt="jalebi" width="300px" height="200px">
+                         <div class="overlay">
+                            <span>Click here to start</span>
+                         </div>
+                        </div>
+                    </div>
+                    
+                </section>
+            </div><br><br>
+            <div id="about">
+                <section>
+                    <h1>About Us</h1>
+                    <p>
+                    Welcome to <b>Tadka Da Dhaaba</b> a place where food is not just cooked, 
+        but crafted with love. Inspired by the charm of traditional Indian 
+        dhabas, we bring you recipes that taste like home yet feel like a feast. <br><br>
+        
+        From sizzling curries and mouth-watering sweets to the aroma of freshly 
+        prepared spices, our kitchen is all about warmth, authenticity, 
+        and unforgettable flavors. <br><br>
+        
+        Whether you are here to relive nostalgic flavors or discover new ones, 
+        <b>Tadka Da Dhaaba</b> promises you a journey filled with taste, tradition, 
+        and a touch of desi magic. <br><br>
+        
+        🍴 Sit back, relax, and let us serve you the flavors of India – straight 
+        from our heart to your plate.
+                    </p>
+                </section>
+            </div>
+            <div id="contact">
+                <section id="contactsection">
+                    <h1>Contact Us</h1>
+                    
+                        Got a craving? Want to know more about our recipes?<br>We’d love to hear from you! Drop us a message, call us, or just swing by.
+                    </p>
+                    <div id="details">
+                        📍 <b>Address:</b> Tadka Da Dhaaba, Near City Square Mall, Ahmedabad, India <br>
+                        📞 <b>Phone:</b> +91 98765 43210 <br>
+                        📧 <b>Email:</b> contact@tadkadadhaaba.com <br>
+                        ⏰ <b>Opening Hours:</b> Mon–Sun, 11:00 AM – 11:00 PM
+                    </div>
+                    <form>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" name="name" style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:8px;"><br>
+
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:8px;"><br>
+
+                        <label for="message">Message</label><br>
+                        <textarea id="message" name="message" rows="4" style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:8px;"></textarea><br>
+
+                        <button type="submit" style="background-color:rgb(78, 11, 84); color:white; padding:12px 25px; border:none; border-radius:10px; cursor:pointer; font-size:1rem;">
+                            Send Message
+                        </button>
+                    </form>
+                </section>
+            </div>
+            <br>
+        </main>
+        <footer>
+            <div class="footerBox">
+                <p>Copyright &copy; 2025 Tadka Da Dhaaba Pvt Ltd. All rights reserved.</p>
+        </footer>
+</body>
+</html>
