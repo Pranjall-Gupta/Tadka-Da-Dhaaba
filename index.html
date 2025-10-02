@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tadka Da Dhaaba</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="images/restroicon.png">
     <style>
         *{
@@ -11,7 +12,7 @@
             margin: 0;
         }
         .container{
-            background-color: rgb(78, 11, 84);
+            background-color:rgba(23, 0, 36);
             height: 128px;
             padding:3px
             
@@ -20,12 +21,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Brush Script MT', cursive;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
             margin:3px;
             color: white;
             padding: auto;
             font-size: 60px;
-            font-weight:bold;
             
         }
         
@@ -48,11 +49,10 @@
             color: whitesmoke;
         }
         .footerBox{
-            background-color:rgb(78, 11, 84) ;
+            background-color:rgba(23, 0, 36) ;
             width:100%;
             text-align:center;
-            min-height: 40px;
-           
+            min-height: 40px; 
         }
         .footerBox p{
             color: rgb(248, 248, 248);
@@ -62,7 +62,7 @@
         .contentBox{
             width:65%;
             margin: auto;
-            box-shadow: 0px 0px 10px 2px rgb(89, 28, 97);
+            box-shadow: 0px 0px 10px 2px rgba(23, 0, 36);
             background-color: white;
             border-radius: 15px;
             display:flex;
@@ -97,7 +97,7 @@
             left: 0;
             height: 100%;
             width: 100%;
-            background-color: rgba(40, 35, 35, 0.621);
+            background-color:rgba(73, 58, 82, 0.899);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -121,10 +121,10 @@
             border-radius: 20px;
         }
         .leftBox h1{
-            font-family: 'Brush Script MT', cursive;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
             font-size: 60px;
             font-style: italic;
-            font-weight: 20;
             text-decoration: underline;
             
         }
@@ -147,7 +147,7 @@
         #home img{
             width:66%;
             height:800px;
-            box-shadow: 0px 0px 10px 2px rgb(89, 28, 97);
+            box-shadow: 0px 0px 10px 2px rgba(23, 0, 36);
             border-radius: 15px;
         }
         #headingdhaaba{
@@ -170,7 +170,7 @@
         }
 
         #about section {
-            box-shadow: 0px 0px 10px 2px rgb(89, 28, 97);
+            box-shadow: 0px 0px 10px 2px rgba(23, 0, 36);
             width: 62%;
             background: white;
             padding: 40px;
@@ -187,22 +187,24 @@
         }
 
         #about h1 {
-            font-family: 'Brush Script MT', cursive; 
+            font-family: 'Dancing Script', cursive; 
+            font-weight: bold;
             font-size: 3rem; 
-            color: rgb(78, 11, 84);
+            color: rgba(23, 0, 36);
             margin-bottom: 20px;
         }
         #contactsection{
             width: 61%;
             padding:50px; 
             text-align:center;
-            box-shadow: 0px 0px 10px 2px rgb(89, 28, 97);
+            box-shadow: 0px 0px 10px 2px rgba(23, 0, 36);
             border-radius: 15px;
         }
         #contact h1{
-            font-family: 'Brush Script MT', cursive; 
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
             font-size: 3rem; 
-            color:rgb(78, 11, 84);
+            color:rgba(23, 0, 36);
         }
         #contact p{
             font-size:1.2rem; 
@@ -251,9 +253,9 @@
             <br>
             <div id="home">
                 <h1 id="headingdhaaba">Welcome to the Dhaaba</h1>
-                <img src="images/homepage.jpg">
+                <img src="images/restaurant.png">
             </div>
-            <br>
+            <br><br>
             <div class="contentBox">
                 <!-- Recipe 1 -->
                 <section id="menu">
@@ -368,13 +370,19 @@
                                     <li>A pinch of turmeric or saffron (optional)</li>
                                 </ul><br>
                                 <h3>Sugar Syrup:</h3>
-                                <li>1 cup sugar</li>
-                                <li>1/2 cup water</li>
-                                <li>1/2 tsp lemon juice</li>
-                                <li>1/4 tsp cardamom powder</li>
+                                <ul  class="ingrelist">
+                                    <li>1 cup sugar</li>
+                                    <li>1/2 cup water</li>
+                                    <li>1/2 tsp lemon juice</li>
+                                    <li>1/4 tsp cardamom powder</li>
+                                </ul>
+                                
                                 <br>
                                 <h3>For Frying:</h3>
-                                <li>Oil or ghee</li>
+                                <ul  class="ingrelist">
+                                    <li>Oil or ghee</li>
+                                </ul>
+                                
                             </div>
                             <br>
                             <div class="recipe">
@@ -397,6 +405,120 @@
                     </div>
                     
                 </section>
+                <!--Recipe 4-->
+                <section>
+                <div class="item">
+                    <div class="leftBox">
+                        <!--heading-->
+                        <h1>Kheer</h1><br>
+                        <div class="ingredients">
+                            <h2>Ingredients</h2><br>
+                            <ul class="ingrelist">
+                                <li>1/2 cup basmati rice</li>
+                                <li>1 liter full cream milk</li>
+                                <li>1/2 cup sugar (adjust to taste)</li>
+                                <li>1/4 tsp cardamom powder</li>
+                                <li>10-12 cashews, almonds, raisins</li>
+                                <li>A few saffron strands (optional)</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="recipe">
+                            <h2>Recipe</h2><br>
+                            <ol class="recipelist">
+                                <li><b>Wash & Soak:</b> Rinse basmati rice 2–3 times until water runs clear. Soak in water for 30 minutes, then drain.</li><br>
+                                <li><b>Boil Milk:</b> Heat milk in a heavy-bottom pan. Bring to a boil, then reduce to low flame and simmer, stirring occasionally to prevent sticking.</li><br>
+                                <li><b>Add Rice:</b> Add the soaked rice to simmering milk. Cook on low flame for 30–35 minutes, stirring often, until rice grains are soft and the mixture thickens.</li><br>
+                                <li><b>Sweeten:</b> Add sugar, cardamom powder, and saffron strands. Stir continuously until sugar dissolves completely and kheer reaches a creamy consistency.</li><br>
+                                <li><b>Garnish:</b> In a small pan, fry cashews, almonds, and raisins in 1 tsp ghee until golden. Add them to the kheer, mix well. Serve warm or chilled after 1–2 hours of refrigeration.</li><br>
+
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="rightBox">
+                        <img src="images/kheer.jpg" alt="Kheer" width="300px" height="200px">
+                        <div class="overlay">
+                            <span>Click here to start</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--recipe 5-->
+            <section>
+                <div class="item">
+                    <div class="leftBox">
+                        <!--heading-->
+                        <h1>Besan Ladoo</h1><br>
+                        <div class="ingredients">
+                            <h2>Ingredients</h2><br>
+                            <ul class="ingrelist">
+                                <li>2 cups gram flour (besan)</li>
+                                <li>1 cup powdered sugar</li>
+                                <li>3/4 cup ghee</li>
+                                <li>1/4 tsp cardamom powder</li>
+                                <li>2 tbsp chopped dry fruits</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="recipe">
+                            <h2>Recipe</h2><br>
+                            <ol class="recipelist">
+                                <li><b>Roast Flour:</b> Heat ghee in a heavy-bottom pan on low flame. Add besan (gram flour) and roast slowly, stirring continuously to avoid lumps. Roast for 20–25 minutes until the mixture turns golden brown and releases a nutty aroma.</li><br>
+                                <li><b>Cool:</b> Switch off the flame and let the roasted mixture cool slightly (it should be warm, not hot). Add cardamom powder and mix well.</li><br>
+                                <li><b>Mix Sugar:</b> Once lukewarm, add powdered sugar gradually, mixing thoroughly to avoid lumps. The mixture should come together and feel soft but firm enough to shape.</li><br>
+                                <li><b>Shape:</b> Take small portions of the mixture in your palm and roll into smooth round ladoos. Press a piece of dry fruit (cashew/almond) on top for garnish.</li><br>
+                                <li><b>Store:</b> Allow ladoos to set completely. Store in an airtight container; they remain fresh for up to 2 weeks at room temperature.</li><br>
+
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="rightBox">
+                        <img src="images/besanladoo.jpg" alt="Besan Ladoo" width="300px" height="200px">
+                        <div class="overlay">
+                            <span>Click here to start</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Recipe 6-->
+            <section>
+                <div class="item">
+                    <div class="leftBox">
+                        <!--heading-->
+                        <h1>Coconut Barfi</h1><br>
+                        <div class="ingredients">
+                            <h2>Ingredients</h2><br>
+                            <ul class="ingrelist">
+                                <li>2 cups grated fresh coconut</li>
+                                <li>1 cup sugar</li>
+                                <li>1/2 cup milk</li>
+                                <li>2 tbsp ghee</li>
+                                <li>1/4 tsp cardamom powder</li>
+                                <li>Chopped pistachios for garnish</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="recipe">
+                            <h2>Recipe</h2><br>
+                            <ol class="recipelist">
+                                <li><b>Cook Mixture:</b> In a heavy-bottom pan, add milk and sugar. Stir on medium flame until sugar dissolves completely and the mixture turns slightly thick (about 5–7 minutes).</li><br>
+                                <li><b>Add Coconut:</b> Add the grated fresh coconut and mix well. Cook on low flame, stirring continuously, so the mixture doesn’t stick or burn.</li><br>
+                                <li><b>Flavor:</b> Add ghee and cardamom powder. Continue cooking until the mixture thickens, turns glossy, and starts leaving the sides of the pan (10–12 minutes).</li><br>
+                                <li><b>Set:</b> Grease a tray or plate with ghee. Transfer the hot mixture, spread it evenly using a spatula, and smooth the surface.</li><br>
+                                <li><b>Cut:</b> Allow it to cool for 30–40 minutes at room temperature. Once firm, cut into squares or diamond shapes and garnish with chopped pistachios or almonds.</li><br>
+
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="rightBox">
+                        <img src="images/cocoburfi.jpg" alt="Coconut Barfi" width="300px" height="200px">
+                        <div class="overlay">
+                            <span>Click here to start</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             </div><br><br>
             <div id="about">
                 <section>
